@@ -1,0 +1,199 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.flex-container {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-flow: row-reverse wrap;
+    column-gap: 20px;
+    row-gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    max-width: 700px;
+    border: 1px solid black;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.difficulty-menu {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    justify-content: stretch;
+    border-bottom: 1px solid black;
+}
+
+.difficulty-options {
+    flex: 1 1 100%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.difficulty-options>button {
+    flex: 1 1;
+    background-color: whitesmoke;
+    border: none;
+    border-left: 1px solid black;
+    padding: 10px;
+    cursor: pointer;
+
+    font-family: Calibri;
+    font-size: 1.5rem;
+    color: white;
+    text-shadow:
+            1px 1px 0 #000,
+            -1px 1px 0 #000,
+            -1px -1px 0 #000,
+            1px -1px 0 #000;
+}
+
+.difficulty-options>button:first-child {
+    border-left: none;
+}
+
+
+
+.difficulty-options .active {
+    background-color: #FF4C4C;
+}
+
+.slider {
+    position: relative;
+    background-color: whitesmoke;
+    width: 100%;
+    height: 25px;
+}
+
+.slider>div {
+    background-color: black;
+    width: 25px;
+    height: 25px;
+}
+
+.block-menu {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    row-gap: 10px;
+    padding: 10px;
+}
+
+.block-menu > * {
+    flex: 0 1 fit-content;
+}
+
+.block-menu canvas {
+    width: 200px;
+    height: 200px;
+    margin: 0;
+}
+
+.block-menu label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*aspect-ratio: 1/1;*/
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.block-menu label:has(input:checked) {
+    border: 2px solid #FF4C4C;
+}
+
+.block-menu input[type='checkbox'] {
+    display: none;
+}
+
+#confirm {
+    display: block;
+    flex: 1 1 100%;
+    font-family: Calibri;
+    font-size: 1.5rem;
+    color: white;
+    text-shadow:
+            1px 1px 0 #000,
+            -1px 1px 0 #000,
+            -1px -1px 0 #000,
+            1px -1px 0 #000;
+    border: none;
+    border-top: 1px solid black;
+    background-color: #FF4C4C;
+    outline: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.manual-container {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    max-width: 700px;
+    border: 1px solid black;
+    border-radius: 12px;
+    overflow: hidden;
+
+    font-family: Calibri;
+    font-size: 1.25rem;
+}
+
+.manual-container>h1 {
+    margin: 0;
+    padding: 10px;
+    color: white;
+    background-color: whitesmoke;
+    border-bottom: 1px solid black;
+
+    text-align: center;
+    font-size: 2rem;
+    /*letter-spacing: 0.05rem;*/
+    text-shadow:
+            1px 1px 0 #000,
+            -1px 1px 0 #000,
+            -1px -1px 0 #000,
+            1px -1px 0 #000;
+}
+
+.manual-description {
+    box-sizing: border-box;
+    padding: 20px;
+    border-bottom: 1px solid black;
+}
+
+.manual-keybinds canvas {
+    border: 1px solid black;
+    border-radius: 12px;
+}
+
+.manual-keybinds>table {
+    margin: 20px 10px;
+    width: 100%;
+}
+
+.manual-keybinds td {
+    text-align: left;
+    padding: 0 10px;
+}
+
+.manual-keybinds td:nth-child(2n+1) {
+    text-align: right;
+    margin: 0;
+}

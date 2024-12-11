@@ -3,45 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <title>Tetris</title>
-    <link href="Style%20pure.css" rel="stylesheet" type="text/css">
+    <link href="Styles/tetris-uputstvo.css" rel="stylesheet" type="text/css">
     <script
             src="https://code.jquery.com/jquery-3.7.1.min.js"
             integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
             crossorigin="anonymous"></script>
-    <script src="tetris-uputstvo.js"></script>
 </head>
 <body>
-    <input type="range" id="difficulty" min="0" max="6">
-    <div>
-        <label>
-            <input type="checkbox" id="ifigure" checked>
-            <img src="ifigure.jpg" alt="ifigure">
-        </label>
-        <label>
-            <input type="checkbox" id="lfigure" checked>
-            <img src="lfigure.jpg" alt="lfigure">
-        </label>
-        <label>
-            <input type="checkbox" id="jfigure" checked>
-            <img src="jfigure.jpg" alt="jfigure">
-        </label>
-        <label>
-            <input type="checkbox" id="sfigure" checked>
-            <img src="sfigure.jpg" alt="sfigure">
-        </label>
-        <label>
-            <input type="checkbox" id="zfigure" checked>
-            <img src="zfigure.jpg" alt="zfigure">
-        </label>
-        <label>
-            <input type="checkbox" id="tfigure" checked>
-            <img src="tfigure.jpg" alt="tfigure">
-        </label>
-        <label>
-            <input type="checkbox" id="ofigure" checked>
-            <img src="ofigure.jpg" alt="ofigure">
-        </label>
-        <button id="confirm">Confirm</button>
+    <div class="flex-container">
+
+        <div class="manual-container">
+            <h1>Description</h1>
+            <div class="manual-description">
+                Tetris is a puzzle game from the Soviet Union that tests your reflexes.
+                Seven different shaped blocks fall down the game field one after the other.
+                The objective of the game is to keep the blocks from piling up to the top of the game field.
+                To do this, you can move the blocks to the left and right, and rotate them as they fall.
+                If you completely fill in one horizontal line, that line disappears and you get points.
+                If the blocks pile up to the top of the game field, then that's the end of the game.
+            </div>
+            <h1>Keybinds</h1>
+            <div class="manual-keybinds">
+                <table>
+                    <tr>
+                        <td>
+                            <canvas id="canvasALeft" width="50" height="50"></canvas>
+                        </td>
+                        <td>Move left</td>
+                        <td>
+                            <canvas id="canvasA" width="50" height="50"></canvas>
+                        </td>
+                        <td>Rotate left</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <canvas id="canvasARight" width="50" height="50"></canvas>
+                        </td>
+                        <td>Move right</td>
+                        <td>
+                            <canvas id="canvasD" width="50" height="50"></canvas>
+                        </td>
+                        <td>Rotate right</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <canvas id="canvasADown" width="50" height="50"></canvas>
+                        </td>
+                        <td>Fall faster</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="menu-container">
+            <div class="difficulty-menu">
+                <div class="difficulty-options">
+                    <button id="difficulty-easy" onClick="set_difficulty(this)" class="active">Easy</button>
+                    <button id="difficulty-medium" onClick="set_difficulty(this)">Medium</button>
+                    <button id="difficulty-hard" onClick="set_difficulty(this)">Hard</button>
+                </div>
+            </div>
+            <div class="block-menu">
+                <label>
+                    <input type="checkbox" id="ifigure" checked>
+                    <canvas id="canvasIFigure" width="300" height="300"></canvas>
+                </label>
+                <label>
+                    <input type="checkbox" id="lfigure" checked>
+                    <canvas id="canvasLFigure" width="300" height="300"></canvas>
+                </label>
+                <label>
+                    <input type="checkbox" id="jfigure" checked>
+                    <canvas id="canvasJFigure" width="300" height="300"></canvas>
+                </label>
+                <label>
+                    <input type="checkbox" id="sfigure" checked>
+                    <canvas id="canvasSFigure" width="300" height="300"></canvas>
+                </label>
+                <label>
+                    <input type="checkbox" id="zfigure" checked>
+                    <canvas id="canvasZFigure" width="300" height="300"></canvas>
+                </label>
+                <label>
+                    <input type="checkbox" id="tfigure" checked>
+                    <canvas id="canvasTFigure" width="300" height="300"></canvas>
+                </label>
+                <label>
+                    <input type="checkbox" id="ofigure" checked>
+                    <canvas id="canvasOFigure" width="300" height="300"></canvas>
+                </label>
+            </div>
+            <button id="confirm">Confirm</button>
+        </div>
     </div>
+    <script src="tetris-uputstvo.js"></script>
+    <script src="Scripts/Blocks.js"></script>
+    <script src="Scripts/Keys.js"></script>
 </body>
 </html>

@@ -1,28 +1,24 @@
 .flex-container {
     position: fixed;
     top: 0; left: 0;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-items: stretch;
-    background-color: lightblue;
+    align-items: center;
+    background-color: white;
 }
 
-.flex-container>div:nth-child(1) {
-    flex: 1 1 auto;
+.tetris-board {
+    flex: 1 1;
     max-height: 100%;
-    max-width: 100%;
-    min-width: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
+    aspect-ratio: 1/2;
 }
 
 .tetris {
-    position: relative;
     height: 100%;
+    max-width: 100%;
     aspect-ratio: 1/2;
     display: grid;
     grid-template: repeat(20, 1fr) / repeat(10, 1fr);
@@ -33,22 +29,106 @@
     background-color: white;
 }
 
-.flex-container>div:nth-child(2) {
-    flex: 1 1 auto;
-    max-height: 100%;
+.tetris-hud {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: stretch;
+    justify-content: center;
+    width: fit-content;
+    height: 100%;
     max-width: 100%;
-    min-width: 500px;
-    background-color: lightslategray;
+    min-width: 180px;
+    background-color: whitesmoke;
+}
+
+.score {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    justify-content: center;
+    row-gap: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #FF4C4C;
+    margin: 10px;
+
+    font-family: Calibri;
+    font-size: 1.5rem;
+    color: #FFDE4D;
+    text-align: center;
+    text-shadow:
+            1px 1px 0 #000,
+            -1px 1px 0 #000,
+            -1px -1px 0 #000,
+            1px -1px 0 #000;
+}
+
+.score>p {
+    margin: 0;
 }
 
 #score {
-    background-color: white;
-    color: green;
-    font-size: 1.5em;
+    background-color: whitesmoke;
+    color: #FFDE4D;
+    padding: 5px 0;
+    border: 1px solid black;
+    border-radius: 10px;
+    /*clip-path: polygon(0 50%, 20px 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 20px 100%);*/
+}
+
+.level {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    justify-content: center;
+    row-gap: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #FF4C4C;
+    margin: 10px;
+
     font-family: Calibri;
-    width: fit-content;
-    padding: 20px;
-    clip-path: polygon(0 50%, 20px 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 20px 100%);
+    font-size: 1.5rem;
+    color: #FFDE4D;
+    text-align: center;
+    text-shadow:
+            1px 1px 0 #000,
+            -1px 1px 0 #000,
+            -1px -1px 0 #000,
+            1px -1px 0 #000;
+}
+
+.level>p {
+    margin: 0;
+}
+
+.lines {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    justify-content: center;
+    row-gap: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #FF4C4C;
+    margin: 10px;
+
+    font-family: Calibri;
+    font-size: 1.5rem;
+    color: #FFDE4D;
+    text-align: center;
+    text-shadow:
+            1px 1px 0 #000,
+            -1px 1px 0 #000,
+            -1px -1px 0 #000,
+            1px -1px 0 #000;
+}
+
+.lines>p {
+    margin: 0;
 }
 
 .hidden {
