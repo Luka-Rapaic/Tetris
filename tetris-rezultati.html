@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tetris</title>
+    <link rel="stylesheet" type="text/css" href="Styles/tetris-rezultati.css">
+</head>
+<body>
+    <div class="flex-container">
+        <div class="scores-container">
+            <h1 class="fancy-text">Top 5 players</h1>
+            <table id="high-scores" class="scores-table">
+                <tr>
+                    <th class="fancy-text">Name</th>
+                    <th class="fancy-text">Score</th>
+                </tr>
+            </table>
+        </div>
+        <div class="scores-container">
+            <h1 class="fancy-text">Last score</h1>
+            <table id="last-score" class="scores-table">
+                <tr>
+                    <th class="fancy-text">Name</th>
+                    <th class="fancy-text">Score</th>
+                </tr>
+            </table>
+        </div>
+        <button class="fancy-text" onclick="back_to_homepage()">Continue</button>
+    </div>
+
+    <script src="Scripts/tetris-rezultati.js"></script>
+</body>
+</html>

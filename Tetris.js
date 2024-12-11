@@ -12,34 +12,62 @@ function end_game(score) {
     let $gameOverScreen = $("#gameOverScreen");
     $gameOverScreen.removeClass("hidden");
 
+    let $finalScore = $("#final-score");
+    $finalScore.text(controller.scoreKeeper.score);
+
+    // let highScores = localStorage.getItem("highScores");
+    // if (highScores) highScores = JSON.parse(highScores);
+    // else highScores = {"names": [], "scores": []};
+    //
+    // let $highScore = $("#highScore");
+    // if (highScores["scores"].length < 5 || highScores["scores"][4] < score) {
+    //     for (let i = 0; i < highScores["scores"].length; i++) {
+    //         if (highScores["scores"][i] < score) {
+    //             let slice1scores = highScores["scores"].slice(0, i);
+    //             let slice1names = highScores["names"].slice(0, i);
+    //             let slice2scores = highScores["scores"].slice(i);
+    //             let slice2names = highScores["names"].slice(i);
+    //
+    //             slice1scores.push(score);
+    //             slice1names.push(name);
+    //
+    //             slice1scores.join(slice2scores);
+    //             slice1names.join(slice2names);
+    //
+    //             slice1scores.slice(0, 5);
+    //             slice1names.slice(0, 5);
+    //
+    //             highScores["scores"] = slice1scores;
+    //             highScores["names"] = slice1names;
+    //             break;
+    //         }
+    //     }
+    // }
+}
+
+function save_score() {
+    let name = $("#name").val();
+    let score = controller.scoreKeeper.score;
+
     let highScores = localStorage.getItem("highScores");
     if (highScores) highScores = JSON.parse(highScores);
-    else highScores = {"names": [], "scores": []};
+    else highScores = [];
 
-    let $highScore = $("#highScore");
-    if (highScores["scores"].length < 5 || highScores["scores"][4] < score) {
-        for (let i = 0; i < highScores["scores"].length; i++) {
-            if (highScores["scores"][i] < score) {
-                let slice1scores = highScores["scores"].slice(0, i);
-                let slice1names = highScores["names"].slice(0, i);
-                let slice2scores = highScores["scores"].slice(i);
-                let slice2names = highScores["names"].slice(i);
+    highScores.push([score, name]);
+    highScores.sort((a, b) => {
+        let a_score = a[0], a_name = a[1], b_score = b[0], b_name = b[1];
+        if (a_score > b_score) return -1;
+        else if (a_score < b_score) return 1;
+        else if (a_name > b_name) return -1;
+        else if (a_name < b_name) return 1;
+        else return 0;
+    });
+    highScores.splice(5);
+    localStorage.setItem("highScores", JSON.stringify(highScores));
 
-                slice1scores.push(score);
-                slice1names.push(name);
+    localStorage.setItem("lastScore", JSON.stringify([score, name]));
 
-                slice1scores.join(slice2scores);
-                slice1names.join(slice2names);
-
-                slice1scores.slice(0, 5);
-                slice1names.slice(0, 5);
-
-                highScores["scores"] = slice1scores;
-                highScores["names"] = slice1names;
-                break;
-            }
-        }
-    }
+    document.location.href = "tetris-rezultati.html";
 }
 
 class ScoreKeeper {
@@ -254,6 +282,7 @@ class Controller {
             if (this.board.isGameOver()) {
                 clearInterval(this.tickRate);
                 clearInterval(this.commandTickRate);
+                end_game(this.scoreKeeper.score)
             }
             this.scoreKeeper.add(this.board.tick());
             this.currentFigure = this.figureGenerator.next();

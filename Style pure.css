@@ -1,3 +1,16 @@
+.fancy-text {
+    color: white;
+    font-size: 1.5rem;
+    font-family: Arial;
+    font-weight: lighter;
+    text-align: center;
+    text-shadow:
+            1px 1px 0 #000,
+            -1px 1px 0 #000,
+            -1px -1px 0 #000,
+            1px -1px 0 #000;
+}
+
 .flex-container {
     position: fixed;
     top: 0; left: 0;
@@ -129,6 +142,122 @@
 
 .lines>p {
     margin: 0;
+}
+
+#gameOverScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 500ms;
+}
+
+#gameOverScreen.hidden {
+    display: initial;
+    opacity: 0;
+}
+
+.ribbon {
+    box-sizing: border-box;
+    padding: 12px;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 20px) 50%, 100% 100%, 0 100%, 20px 50%);
+
+    font-size: 2rem;
+}
+
+#animation-ribbon {
+    position: absolute;
+    top: 25%;
+    left: -90%;
+    width: 90%;
+    color: transparent;
+    background-color: black;
+
+    transition: 950ms;
+}
+
+.hidden #animation-ribbon {
+    left: 100%;
+}
+
+#gameOverRibbon {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    width: 90%;
+    background-color: black;
+    padding: 1px;
+
+    transition-delay: 550ms;
+    transition-duration: 475ms;
+}
+
+#gameOverRibbon>div {
+    background-color: #FF4C4C;
+}
+
+.hidden #gameOverRibbon {
+    left: -90%;
+}
+
+#score-form {
+    position: absolute;
+    top: calc(30% + 1.5rem + 42px);
+    left: 50%;
+    width: 90%;
+    max-width: 300px;
+    transform: translateX(-50%);
+    display: flex;
+    flex-flow: column nowrap;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 12px;
+    background-color: white;
+    overflow: hidden;
+
+    font-family: Calibri;
+    font-size: 1.25rem;
+    transition-delay: 2000ms;
+    transition-duration: 1000ms;
+}
+
+.hidden #score-form{
+    opacity: 0;
+}
+
+#score-form h1 {
+    flex: 1 1;
+    margin: 0;
+    padding: 10px;
+    background-color: whitesmoke;
+    border-bottom: 1px solid black;
+}
+
+#final-score {
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+#score-form input {
+    flex: 1 1;
+    padding: 10px;
+    font-size: 1.25rem;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
+#score-form button {
+    flex: 1 1;
+    padding: 10px;
+    background-color: #FF4C4C;
+    border: none;
+    border-top: 1px solid black;
+    outline: none;
+    cursor: pointer;
 }
 
 .hidden {
