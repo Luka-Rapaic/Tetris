@@ -174,6 +174,8 @@ body {
 #gameOverScreen.hidden {
     display: initial;
     opacity: 0;
+    pointer-events: none;
+    touch-action: none;
 }
 
 .ribbon {
@@ -287,9 +289,9 @@ body {
     width: 100%;
     height: 200px;
     border: 1px solid black;
-    display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
+    display: none;
 }
 
 .touch-controls canvas {
@@ -299,8 +301,12 @@ body {
 
 @media (pointer: coarse) and (hover: none) {
     /* Styles for touchscreen devices */
-    body {
-        background-color: lightblue;
+    .touch-controls {
+        display: grid;
+    }
+
+    .flex-container {
+        height: calc(100% - 200px);
     }
 }
 
