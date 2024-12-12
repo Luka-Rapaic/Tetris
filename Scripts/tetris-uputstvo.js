@@ -1,4 +1,5 @@
 import {IFigure, JFigure, LFigure, OFigure, SFigure, TFigure, ZFigure} from "./Blocks.js";
+import {KeyA, KeyD, KeyDown, KeyLeft, KeyRight} from "./Keys.js";
 
 function set_difficulty(element) {
     for (let button of buttons) button.classList.remove("active");
@@ -82,6 +83,27 @@ tfigure.paint();
 zfigure.paint();
 sfigure.paint();
 ofigure.paint();
+
+let ctxALeft = document.getElementById("canvasALeft").getContext("2d");
+let aLeft = new KeyLeft(ctxALeft);
+
+let ctxARight = document.getElementById("canvasARight").getContext("2d");
+let aRight = new KeyRight(ctxARight);
+
+let ctxADown = document.getElementById("canvasADown").getContext("2d");
+let aDown = new KeyDown(ctxADown);
+
+let ctxA = document.getElementById("canvasA").getContext("2d");
+let a = new KeyA(ctxA);
+
+let ctxD = document.getElementById("canvasD").getContext("2d");
+let d = new KeyD(ctxD);
+
+aLeft.paint();
+aRight.paint();
+aDown.paint();
+a.paint();
+d.paint();
 
 $(document).ready(function() {
     $("#confirm").click(get_settings);

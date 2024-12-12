@@ -1,4 +1,5 @@
 import {IFigure, LFigure, JFigure, TFigure, OFigure, SFigure, ZFigure} from "./Blocks.js";
+import {KeyLeft, KeyRight} from "./Keys.js";
 
 let controller;
 
@@ -181,6 +182,17 @@ class Controller {
 
         $(document).keydown((event) => this.keyDownHandler(event));
         $(document).keyup((event) => this.keyUpHandler(event));
+
+        let instance = this;
+        let buttonMoveLeft = $("#buttonMoveLeft");
+        buttonMoveLeft.bind("touchstart", (event) => {instance.keyDownHandler({"keyCode": 37})});
+        buttonMoveLeft.bind("touchend", (event) => {instance.keyUpHandler({"keyCode": 37})});
+        new KeyLeft(buttonMoveLeft.get(0).getContext("2d")).paint();
+
+        let buttonMoveRight = $("#buttonMoveRight");
+        buttonMoveRight.bind("touchstart", (event) => {instance.keyDownHandler({"keyCode": 39})});
+        buttonMoveRight.bind("touchend", (event) => {instance.keyUpHandler({"keyCode": 39})});
+        new KeyRight(buttonMoveRight.get(0).getContext("2d")).paint();
 
         this.tickRate = null;
         this.adjustTickrate();

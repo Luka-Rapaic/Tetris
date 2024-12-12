@@ -1,6 +1,6 @@
-const CTX_HEIGHT_KEYS = 50;
+const CTX_HEIGHT_KEYS = 300;
 
-class KeyLeft {
+export class KeyLeft {
     constructor(ctx) {
         this.ctx = ctx;
     }
@@ -23,7 +23,7 @@ class KeyLeft {
     }
 }
 
-class KeyRight {
+export class KeyRight {
     constructor(ctx) {
         this.ctx = ctx;
     }
@@ -46,7 +46,7 @@ class KeyRight {
     }
 }
 
-class KeyDown {
+export class KeyDown {
     constructor(ctx) {
         this.ctx = ctx;
     }
@@ -69,7 +69,7 @@ class KeyDown {
     }
 }
 
-class KeyUp {
+export class KeyUp {
     constructor(ctx) {
         this.ctx = ctx;
     }
@@ -92,7 +92,7 @@ class KeyUp {
     }
 }
 
-class KeyA {
+export class KeyA {
     constructor(ctx) {
         this.ctx = ctx;
     }
@@ -105,7 +105,7 @@ class KeyA {
     }
 }
 
-class KeyD {
+export class KeyD {
     constructor(ctx) {
         this.ctx = ctx;
     }
@@ -117,28 +117,3 @@ class KeyD {
         this.ctx.fillText("D", CTX_HEIGHT_KEYS/2, CTX_HEIGHT_KEYS/2, CTX_HEIGHT_KEYS);
     }
 }
-
-let ctxALeft = document.getElementById("canvasALeft").getContext("2d");
-let aLeft = new KeyLeft(ctxALeft);
-
-let ctxARight = document.getElementById("canvasARight").getContext("2d");
-let aRight = new KeyRight(ctxARight);
-
-let ctxADown = document.getElementById("canvasADown").getContext("2d");
-let aDown = new KeyDown(ctxADown);
-
-// let ctxAUp = document.getElementById("canvasAUp").getContext("2d");
-// let aUp = new KeyDown(ctxAUp);
-
-let ctxA = document.getElementById("canvasA").getContext("2d");
-let a = new KeyA(ctxA);
-
-let ctxD = document.getElementById("canvasD").getContext("2d");
-let d = new KeyD(ctxD);
-
-aLeft.paint();
-aRight.paint();
-aDown.paint();
-// aUp.paint();
-a.paint();
-d.paint();
