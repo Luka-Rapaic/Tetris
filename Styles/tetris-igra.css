@@ -19,19 +19,13 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     background-color: white;
 }
 
-.tetris-board {
-    flex: 1 1;
-    max-height: 100%;
-    aspect-ratio: 1/2;
-}
-
 .tetris {
+    position: relative;
     height: 100%;
-    max-width: 100%;
     aspect-ratio: 1/2;
     display: grid;
     grid-template: repeat(20, 1fr) / repeat(10, 1fr);
@@ -59,62 +53,50 @@
     flex-flow: column nowrap;
     align-items: stretch;
     justify-content: center;
-    row-gap: 10px;
-    padding: 10px;
     border: 1px solid black;
     border-radius: 10px;
-    background-color: #FF4C4C;
     margin: 10px;
-
-    font-family: Calibri;
-    font-size: 1.5rem;
-    color: #FFDE4D;
-    text-align: center;
-    text-shadow:
-            1px 1px 0 #000,
-            -1px 1px 0 #000,
-            -1px -1px 0 #000,
-            1px -1px 0 #000;
+    overflow: hidden;
 }
 
 .score>p {
+    padding: 10px;
     margin: 0;
 }
 
-#score {
-    background-color: whitesmoke;
-    color: #FFDE4D;
-    padding: 5px 0;
-    border: 1px solid black;
-    border-radius: 10px;
-    /*clip-path: polygon(0 50%, 20px 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 20px 100%);*/
+.score>p:first-child {
+    background-color: #FF4C4C;
+    border-bottom: 1px solid black;
 }
+
+/*#score {*/
+/*    background-color: whitesmoke;*/
+/*    color: #FFDE4D;*/
+/*    padding: 5px 0;*/
+/*    border: 1px solid black;*/
+/*    border-radius: 10px;*/
+/*    !*clip-path: polygon(0 50%, 20px 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 20px 100%);*!*/
+/*}*/
 
 .level {
     display: flex;
     flex-flow: column nowrap;
     align-items: stretch;
     justify-content: center;
-    row-gap: 10px;
-    padding: 10px;
     border: 1px solid black;
     border-radius: 10px;
-    background-color: #FF4C4C;
     margin: 10px;
-
-    font-family: Calibri;
-    font-size: 1.5rem;
-    color: #FFDE4D;
-    text-align: center;
-    text-shadow:
-            1px 1px 0 #000,
-            -1px 1px 0 #000,
-            -1px -1px 0 #000,
-            1px -1px 0 #000;
+    overflow: hidden;
 }
 
 .level>p {
+    padding: 10px;
     margin: 0;
+}
+
+.level>p:first-child {
+    background-color: #FF4C4C;
+    border-bottom: 1px solid black;
 }
 
 .lines {
@@ -122,26 +104,56 @@
     flex-flow: column nowrap;
     align-items: stretch;
     justify-content: center;
-    row-gap: 10px;
-    padding: 10px;
     border: 1px solid black;
     border-radius: 10px;
-    background-color: #FF4C4C;
     margin: 10px;
-
-    font-family: Calibri;
-    font-size: 1.5rem;
-    color: #FFDE4D;
-    text-align: center;
-    text-shadow:
-            1px 1px 0 #000,
-            -1px 1px 0 #000,
-            -1px -1px 0 #000,
-            1px -1px 0 #000;
+    overflow: hidden;
 }
 
 .lines>p {
+    padding: 10px;
     margin: 0;
+}
+
+.lines>p:first-child {
+    background-color: #FF4C4C;
+    border-bottom: 1px solid black;
+}
+
+.figure-queue-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.figure-queue-container h1 {
+    margin: 0;
+    padding: 10px;
+    background-color: #FF4C4C;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+.figure-queue-container canvas {
+    max-width: 100px;
+    max-height: 100px;
+    aspect-ratio: 1/1;
+    border: 1px solid black;
+    border-radius: 12px;
+}
+
+.figure-queue {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+    padding: 10px;
 }
 
 #gameOverScreen {
@@ -263,3 +275,16 @@
 .hidden {
     display: none;
 }
+
+/*@media (pointer: coarse) and (hover: none) {*/
+/*    !* Styles for touchscreen devices *!*/
+/*    body {*/
+/*        background-color: lightblue;*/
+/*    }*/
+/*}*/
+
+/*@media only screen {*/
+/*    .flex-container {*/
+/*        height: 70%;*/
+/*    }*/
+/*}*/

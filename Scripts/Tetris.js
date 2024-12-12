@@ -1,3 +1,5 @@
+import {IFigure, LFigure, JFigure, TFigure, OFigure, SFigure, ZFigure} from "./Blocks.js";
+
 let controller;
 
 function init_game() {
@@ -118,6 +120,11 @@ class FigureGenerator {
         if (this.settings["tfigure"]) this.figureList.push("tfigure");
         if (this.settings["ofigure"]) this.figureList.push("ofigure");
 
+        this.ctxQueue = [
+            document.getElementById("figure-queue-0").getContext("2d"),
+            document.getElementById("figure-queue-1").getContext("2d")
+        ]
+
         this.queue = [];
         for (let i = 0; i < 2; i++) this.queue.push(this.generate());
     }
@@ -146,7 +153,14 @@ class FigureGenerator {
     next() {
         let nextFigure = this.queue.shift();
         this.queue.push(this.generate());
+        this.paintQueue();
         return nextFigure;
+    }
+
+    paintQueue() {
+        for (let i = 0; i < 2; i++) {
+            this.queue[i].drawIcon(this.ctxQueue[i]);
+        }
     }
 }
 
@@ -492,7 +506,11 @@ class I_Figure extends Figure {
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0]
         ]
-        super(matrix, "blue", board);
+        super(matrix, "#577590", board);
+    }
+
+    drawIcon(ctx) {
+        new IFigure(ctx).paint();
     }
 }
 
@@ -505,7 +523,11 @@ class L_Figure extends Figure {
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0]
         ]
-        super(matrix, "orange", board);
+        super(matrix, "#F8961E", board);
+    }
+
+    drawIcon(ctx) {
+        new LFigure(ctx).paint();
     }
 }
 
@@ -518,7 +540,11 @@ class J_Figure extends Figure {
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0]
         ]
-        super(matrix, "red", board);
+        super(matrix, "#F94144", board);
+    }
+
+    drawIcon(ctx) {
+        new JFigure(ctx).paint();
     }
 }
 
@@ -531,7 +557,11 @@ class T_Figure extends Figure {
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0]
         ]
-        super(matrix, "green", board);
+        super(matrix, "#43AA8B", board);
+    }
+
+    drawIcon(ctx) {
+        new TFigure(ctx).paint();
     }
 }
 
@@ -544,7 +574,11 @@ class O_Figure extends Figure {
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0]
         ]
-        super(matrix, "yellow", board);
+        super(matrix, "#F9C74F", board);
+    }
+
+    drawIcon(ctx) {
+        new OFigure(ctx).paint();
     }
 }
 
@@ -557,7 +591,11 @@ class S_Figure extends Figure {
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0]
         ]
-        super(matrix, "purple", board);
+        super(matrix, "#6a4c93", board);
+    }
+
+    drawIcon(ctx) {
+        new SFigure(ctx).paint();
     }
 }
 
@@ -570,7 +608,11 @@ class Z_Figure extends Figure {
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0]
         ]
-        super(matrix, "cyan", board);
+        super(matrix, "#97dffc", board);
+    }
+
+    drawIcon(ctx) {
+        new ZFigure(ctx).paint();
     }
 }
 
@@ -590,6 +632,8 @@ $(document).ready(function() {
     // let matrix = init_board();
     // matrix[5][2].css("background-color", "red");
 });
+
+window.save_score = save_score;
 
 // let figure = new Z_Figure();
 // figure.printMatrix();

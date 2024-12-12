@@ -1,7 +1,7 @@
 const BLOCK_HEIGHT = 70
 const CTX_HEIGHT = 300
 
-class Block {
+export class Block {
     constructor(ctx, color, x, y) {
         this.ctx = ctx;
         this.color = color;
@@ -15,8 +15,9 @@ class Block {
     }
 }
 
-class IFigure {
+export class IFigure {
     constructor(ctx) {
+        this.ctx = ctx;
         let x = (CTX_HEIGHT - BLOCK_HEIGHT) / 2;
         let y = (CTX_HEIGHT - 4*BLOCK_HEIGHT) / 2;
         this.blocks = [
@@ -28,12 +29,14 @@ class IFigure {
     }
 
     paint() {
+        this.ctx.clearRect(0, 0, CTX_HEIGHT, CTX_HEIGHT);
         for (let block of this.blocks) block.paint();
     }
 }
 
-class LFigure {
+export class LFigure {
     constructor(ctx) {
+        this.ctx = ctx;
         let x = (CTX_HEIGHT - 2*BLOCK_HEIGHT) / 2;
         let y = (CTX_HEIGHT - 3*BLOCK_HEIGHT) / 2;
         this.blocks = [
@@ -45,12 +48,14 @@ class LFigure {
     }
 
     paint() {
+        this.ctx.clearRect(0, 0, CTX_HEIGHT, CTX_HEIGHT);
         for (let block of this.blocks) block.paint();
     }
 }
 
-class JFigure {
+export class JFigure {
     constructor(ctx) {
+        this.ctx = ctx;
         let x = (CTX_HEIGHT - 2*BLOCK_HEIGHT) / 2;
         let y = (CTX_HEIGHT - 3*BLOCK_HEIGHT) / 2;
         this.blocks = [
@@ -62,12 +67,14 @@ class JFigure {
     }
 
     paint() {
+        this.ctx.clearRect(0, 0, CTX_HEIGHT, CTX_HEIGHT);
         for (let block of this.blocks) block.paint();
     }
 }
 
-class TFigure {
+export class TFigure {
     constructor(ctx) {
+        this.ctx = ctx;
         let x = (CTX_HEIGHT - 3*BLOCK_HEIGHT) / 2;
         let y = (CTX_HEIGHT - 2*BLOCK_HEIGHT) / 2;
         this.blocks = [
@@ -79,12 +86,14 @@ class TFigure {
     }
 
     paint() {
+        this.ctx.clearRect(0, 0, CTX_HEIGHT, CTX_HEIGHT);
         for (let block of this.blocks) block.paint();
     }
 }
 
-class ZFigure {
+export class ZFigure {
     constructor(ctx) {
+        this.ctx = ctx;
         let x = (CTX_HEIGHT - 3*BLOCK_HEIGHT) / 2;
         let y = (CTX_HEIGHT - 2*BLOCK_HEIGHT) / 2;
         this.blocks = [
@@ -96,12 +105,14 @@ class ZFigure {
     }
 
     paint() {
+        this.ctx.clearRect(0, 0, CTX_HEIGHT, CTX_HEIGHT);
         for (let block of this.blocks) block.paint();
     }
 }
 
-class SFigure {
+export class SFigure {
     constructor(ctx) {
+        this.ctx = ctx;
         let x = (CTX_HEIGHT - 3*BLOCK_HEIGHT) / 2;
         let y = (CTX_HEIGHT - 2*BLOCK_HEIGHT) / 2;
         this.blocks = [
@@ -113,12 +124,14 @@ class SFigure {
     }
 
     paint() {
+        this.ctx.clearRect(0, 0, CTX_HEIGHT, CTX_HEIGHT);
         for (let block of this.blocks) block.paint();
     }
 }
 
-class OFigure {
+export class OFigure {
     constructor(ctx) {
+        this.ctx = ctx;
         let x = (CTX_HEIGHT - 2*BLOCK_HEIGHT) / 2;
         let y = (CTX_HEIGHT - 2*BLOCK_HEIGHT) / 2;
         this.blocks = [
@@ -130,43 +143,7 @@ class OFigure {
     }
 
     paint() {
+        this.ctx.clearRect(0, 0, CTX_HEIGHT, CTX_HEIGHT);
         for (let block of this.blocks) block.paint();
     }
 }
-
-canvasIFigure = document.getElementById("canvasIFigure");
-ctxIFigure = canvasIFigure.getContext("2d");
-
-canvasLFigure = document.getElementById("canvasLFigure");
-ctxLFigure = canvasLFigure.getContext("2d");
-
-canvasJFigure = document.getElementById("canvasJFigure");
-ctxJFigure = canvasJFigure.getContext("2d");
-
-canvasTFigure = document.getElementById("canvasTFigure");
-ctxTFigure = canvasTFigure.getContext("2d");
-
-canvasZFigure = document.getElementById("canvasZFigure");
-ctxZFigure = canvasZFigure.getContext("2d");
-
-canvasSFigure = document.getElementById("canvasSFigure");
-ctxSFigure = canvasSFigure.getContext("2d");
-
-canvasOFigure = document.getElementById("canvasOFigure");
-ctxOFigure = canvasOFigure.getContext("2d");
-
-ifigure = new IFigure(ctxIFigure);
-lfigure = new LFigure(ctxLFigure);
-jfigure = new JFigure(ctxJFigure);
-tfigure = new TFigure(ctxTFigure);
-zfigure = new ZFigure(ctxZFigure);
-sfigure = new SFigure(ctxSFigure);
-ofigure = new OFigure(ctxOFigure);
-
-ifigure.paint();
-lfigure.paint();
-jfigure.paint();
-tfigure.paint();
-zfigure.paint();
-sfigure.paint();
-ofigure.paint();
