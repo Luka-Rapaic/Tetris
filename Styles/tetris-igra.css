@@ -287,17 +287,19 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 200px;
-    border: 1px solid black;
+    height: 150px;
+    box-sizing: border-box;
+    border-top: 1px solid black;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
-    /*display: grid;*/
+    align-items: center;
+    justify-items: center;
     display: none;
 }
 
 .touch-controls canvas {
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
 }
 
 @media (pointer: coarse) and (hover: none) {
@@ -307,7 +309,7 @@ body {
     }
 
     .flex-container {
-        height: calc(100% - 200px);
+        height: calc(100% - 150px);
         flex-flow: row nowrap;
         align-items: center;
     }
@@ -315,7 +317,7 @@ body {
     .tetris {
         flex: 4 1;
         height: auto;
-        max-height: calc(100vh - 200px);
+        max-height: calc(100% - 150px);
     }
 
     .tetris-hud {
