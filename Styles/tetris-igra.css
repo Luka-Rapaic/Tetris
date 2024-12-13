@@ -308,6 +308,38 @@ body {
 
     .flex-container {
         height: calc(100% - 200px);
+        flex-flow: row nowrap;
+        align-items: center;
+    }
+
+    .tetris {
+        flex: 1 1;
+        height: auto;
+    }
+
+    .tetris-hud {
+        flex: 1 1;
+    }
+
+    .score>p {
+        padding: 10px 5px;
+    }
+
+    .level>p {
+        padding: 10px 5px;
+    }
+
+    .lines>p {
+        padding: 10px 5px;
+    }
+
+    .figure-queue-container h1 {
+        padding: 10px 5px;
+    }
+
+    .figure-queue {
+        row-gap: 5px;
+        padding: 5px;
     }
 }
 
