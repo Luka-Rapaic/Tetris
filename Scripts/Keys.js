@@ -117,3 +117,37 @@ export class KeyD {
         this.ctx.fillText("D", CTX_HEIGHT_KEYS/2, CTX_HEIGHT_KEYS/2, CTX_HEIGHT_KEYS);
     }
 }
+
+export class KeyRotateLeft {
+    constructor(ctx) {
+        this.ctx = ctx;
+    }
+
+    paint() {
+        this.ctx.beginPath();
+        this.ctx.arc(CTX_HEIGHT_KEYS/2, CTX_HEIGHT_KEYS/2, 3*CTX_HEIGHT_KEYS/10, 5*Math.PI/4, 3*Math.PI/4);
+        this.ctx.arc(CTX_HEIGHT_KEYS/2, CTX_HEIGHT_KEYS/2, 4*CTX_HEIGHT_KEYS/10, 3*Math.PI/4, 5*Math.PI/4, true);
+        this.ctx.lineTo(3*CTX_HEIGHT_KEYS/20, 3*CTX_HEIGHT_KEYS/20);
+        this.ctx.lineTo(3*CTX_HEIGHT_KEYS/20, 4*CTX_HEIGHT_KEYS/10);
+        this.ctx.lineTo(11*CTX_HEIGHT_KEYS/31, 11*CTX_HEIGHT_KEYS/31);
+        this.ctx.closePath();
+        this.ctx.fill();
+    }
+}
+
+export class KeyRotateRight {
+    constructor(ctx) {
+        this.ctx = ctx;
+    }
+
+    paint() {
+        this.ctx.beginPath();
+        this.ctx.arc(CTX_HEIGHT_KEYS/2, CTX_HEIGHT_KEYS/2, 3*CTX_HEIGHT_KEYS/10, 7*Math.PI/4, 1*Math.PI/4, true);
+        this.ctx.arc(CTX_HEIGHT_KEYS/2, CTX_HEIGHT_KEYS/2, 4*CTX_HEIGHT_KEYS/10, 1*Math.PI/4, 7*Math.PI/4);
+        this.ctx.lineTo(17*CTX_HEIGHT_KEYS/20, 3*CTX_HEIGHT_KEYS/20);
+        this.ctx.lineTo(17*CTX_HEIGHT_KEYS/20, 4*CTX_HEIGHT_KEYS/10);
+        this.ctx.lineTo(20*CTX_HEIGHT_KEYS/31, 11*CTX_HEIGHT_KEYS/31);
+        this.ctx.closePath();
+        this.ctx.fill();
+    }
+}

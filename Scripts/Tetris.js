@@ -1,5 +1,5 @@
 import {IFigure, LFigure, JFigure, TFigure, OFigure, SFigure, ZFigure} from "./Blocks.js";
-import {KeyLeft, KeyRight} from "./Keys.js";
+import {KeyDown, KeyLeft, KeyRight, KeyRotateLeft, KeyRotateRight} from "./Keys.js";
 
 let controller;
 
@@ -184,6 +184,23 @@ class Controller {
         $(document).keyup((event) => this.keyUpHandler(event));
 
         let instance = this;
+
+        let buttonRotateLeft = $("#buttonRotateLeft");
+        buttonRotateLeft.bind("touchstart", (event) => {
+            event.preventDefault();
+            instance.keyDownHandler({"keyCode": 65})
+        });
+        buttonRotateLeft.bind("touchend", (event) => {instance.keyUpHandler({"keyCode": 65})});
+        new KeyRotateLeft(buttonRotateLeft.get(0).getContext("2d")).paint();
+
+        let buttonRotateRight = $("#buttonRotateRight");
+        buttonRotateRight.bind("touchstart", (event) => {
+            event.preventDefault();
+            instance.keyDownHandler({"keyCode": 68})
+        });
+        buttonRotateRight.bind("touchend", (event) => {instance.keyUpHandler({"keyCode": 68})});
+        new KeyRotateRight(buttonRotateRight.get(0).getContext("2d")).paint();
+
         let buttonMoveLeft = $("#buttonMoveLeft");
         buttonMoveLeft.bind("touchstart", (event) => {
             event.preventDefault();
@@ -191,6 +208,14 @@ class Controller {
         });
         buttonMoveLeft.bind("touchend", (event) => {instance.keyUpHandler({"keyCode": 37})});
         new KeyLeft(buttonMoveLeft.get(0).getContext("2d")).paint();
+
+        let buttonMoveDown = $("#buttonMoveDown");
+        buttonMoveDown.bind("touchstart", (event) => {
+            event.preventDefault();
+            instance.keyDownHandler({"keyCode": 37})
+        });
+        buttonMoveDown.bind("touchend", (event) => {instance.keyUpHandler({"keyCode": 37})});
+        new KeyDown(buttonMoveDown.get(0).getContext("2d")).paint();
 
         let buttonMoveRight = $("#buttonMoveRight");
         buttonMoveRight.bind("touchstart", (event) => {
