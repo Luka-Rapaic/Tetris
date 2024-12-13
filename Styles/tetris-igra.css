@@ -315,6 +315,7 @@ body {
     .tetris {
         flex: 4 1;
         height: auto;
+        max-height: calc(100vh - 200px);
     }
 
     .tetris-hud {
