@@ -313,31 +313,48 @@ body {
     }
 
     .tetris {
-        flex: 2 1;
+        flex: 4 1;
         height: auto;
     }
 
     .tetris-hud {
+        min-width: auto;
         flex: 1 1;
+    }
+
+    .score {
+        margin: 5px;
     }
 
     .score>p {
         padding: 5px;
-        font-size: 1.2rem;
+        font-size: 1rem;
+    }
+
+    .level {
+        margin: 5px;
     }
 
     .level>p {
         padding: 5px;
-        font-size: 1.2rem;
+        font-size: 1rem;
+    }
+
+    .lines {
+        margin: 5px;
     }
 
     .lines>p {
-        padding: 10px 5px;
-        font-size: 1.2rem;
+        padding: 5px;
+        font-size: 1rem;
+    }
+
+    .figure-queue-container {
+        margin: 5px;
     }
 
     .figure-queue-container h1 {
-        font-size: 1.2rem;
+        font-size: 1rem;
         padding: 5px;
     }
 
