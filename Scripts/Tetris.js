@@ -212,9 +212,9 @@ class Controller {
         let buttonMoveDown = $("#buttonMoveDown");
         buttonMoveDown.bind("touchstart", (event) => {
             event.preventDefault();
-            instance.keyDownHandler({"keyCode": 37})
+            instance.keyDownHandler({"keyCode": 40})
         });
-        buttonMoveDown.bind("touchend", (event) => {instance.keyUpHandler({"keyCode": 37})});
+        buttonMoveDown.bind("touchend", (event) => {instance.keyUpHandler({"keyCode": 40})});
         new KeyDown(buttonMoveDown.get(0).getContext("2d")).paint();
 
         let buttonMoveRight = $("#buttonMoveRight");
