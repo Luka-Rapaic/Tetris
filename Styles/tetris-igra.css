@@ -322,12 +322,12 @@ body {
     }
 
     .score>p {
-        padding: 10px 5px;
+        padding: 5px;
         font-size: 1.2rem;
     }
 
     .level>p {
-        padding: 10px 5px;
+        padding: 5px;
         font-size: 1.2rem;
     }
 
@@ -338,7 +338,7 @@ body {
 
     .figure-queue-container h1 {
         font-size: 1.2rem;
-        padding: 10px 5px;
+        padding: 5px;
     }
 
     .figure-queue {
