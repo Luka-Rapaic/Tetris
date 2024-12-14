@@ -15,6 +15,6 @@ new KeyDown(ctxMD).paint();
 let ctxMR = document.getElementById("ctxMR").getContext("2d");
 new KeyRight(ctxMR).paint();
 
-document.body.getElementById("body").addEventListener("touchstart", (event) => {
+document.addEventListener("touchstart", (event) => {
     event.preventDefault();
 });
