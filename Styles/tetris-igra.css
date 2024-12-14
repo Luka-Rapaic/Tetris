@@ -287,19 +287,43 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 150px;
+    height: 175px;
     box-sizing: border-box;
     border-top: 1px solid black;
     grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     align-items: center;
     justify-items: center;
     display: none;
 }
 
+.touch-controls :nth-child(1) {
+    grid-column: 1 / span 3;
+}
+
+.touch-controls :nth-child(2) {
+    grid-column: 4 / span 3;
+}
+
+.touch-controls :nth-child(3) {
+    grid-column: 1  / span 2;
+}
+
+.touch-controls :nth-child(4) {
+    grid-column: 3  / span 2;
+}
+
+.touch-controls :nth-child(5) {
+    grid-column: 5  / span 2;
+}
+
+/*.touch-controls canvas {*/
+/*    column-span: 2;*/
+/*}*/
+
 .touch-controls canvas {
-    width: 75px;
-    height: 75px;
+    width: 87.5px;
+    height: 87.5px;
 }
 
 @media (pointer: coarse) and (hover: none) {
@@ -309,7 +333,7 @@ body {
     }
 
     .flex-container {
-        height: calc(100% - 150px);
+        height: calc(100% - 175px);
         flex-flow: row nowrap;
         align-items: center;
     }
@@ -317,7 +341,6 @@ body {
     .tetris {
         flex: 4 1;
         height: auto;
-        max-height: calc(100% - 150px);
     }
 
     .tetris-hud {
