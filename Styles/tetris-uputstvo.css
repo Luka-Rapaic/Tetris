@@ -4,8 +4,8 @@ body {
 }
 
 .flex-container {
-    position: relative;
-    min-height: 100vh;
+    position: fixed;
+    min-height: 100%;
     width: 100%;
     box-sizing: border-box;
     padding: 40px;
@@ -202,8 +202,9 @@ body {
 
 @media (pointer: coarse) and (hover: none) {
     .flex-container {
-        row-gap: 5px;
-        column-gap: 5px;
-        padding: 5px;
+        align-items: center;
+        row-gap: 10px !important;
+        column-gap: 10px !important;
+        padding: 10px !important;
     }
 }
