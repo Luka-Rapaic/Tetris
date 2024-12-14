@@ -227,7 +227,7 @@ class Controller {
 
         this.tickRate = null;
         this.adjustTickrate();
-        this.commandTickRate = setInterval(() => this.commandHandler(), 100);
+        // this.commandTickRate = setInterval(() => this.commandHandler(), 100);
     }
 
     keyDownHandler(event) {
@@ -338,7 +338,7 @@ class Controller {
         if (this.currentFigure.tick()) {
             if (this.board.isGameOver()) {
                 clearInterval(this.tickRate);
-                clearInterval(this.commandTickRate);
+                // clearInterval(this.commandTickRate);
                 end_game(this.scoreKeeper.score)
             }
             this.scoreKeeper.add(this.board.tick());
