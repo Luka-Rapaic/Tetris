@@ -186,35 +186,35 @@ class Controller {
 
         let btnRL = $("#btnRL");
         btnRL.bind("touchstart", (event) => {
-            // event.preventDefault();
+            event.preventDefault();
             instance.keyDownHandler({"keyCode": 65})
         });
         btnRL.bind("touchend", (event) => {instance.keyUpHandler({"keyCode": 65})});
 
         let btnRR = $("#btnRR");
         btnRR.bind("touchstart", (event) => {
-            // event.preventDefault();
+            event.preventDefault();
             instance.keyDownHandler({"keyCode": 68})
         });
         btnRR.bind("touchend", (event) => {instance.keyUpHandler({"keyCode": 68})});
 
         let btnML = $("#btnML");
         btnML.bind("touchstart", (event) => {
-            // event.preventDefault();
+            event.preventDefault();
             instance.keyDownHandler({"keyCode": 37})
         });
         btnML.bind("touchend", (event) => {instance.keyUpHandler({"keyCode": 37})});
 
         let btnMD = $("#btnMD");
         btnMD.bind("touchstart", (event) => {
-            // event.preventDefault();
+            event.preventDefault();
             instance.keyDownHandler({"keyCode": 40})
         });
         btnMD.bind("touchend", (event) => {instance.keyUpHandler({"keyCode": 40})});
 
         let btnMR = $("#btnMR");
         btnMR.bind("touchstart", (event) => {
-            // event.preventDefault();
+            event.preventDefault();
             instance.keyDownHandler({"keyCode": 39})
         });
         btnMR.bind("touchend", (event) => {instance.keyUpHandler({"keyCode": 39})});

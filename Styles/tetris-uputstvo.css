@@ -199,3 +199,11 @@ body {
     text-align: right;
     margin: 0;
 }
+
+@media (pointer: coarse) and (hover: none) {
+    .flex-container {
+        row-gap: 5px;
+        column-gap: 5px;
+        padding: 5px;
+    }
+}
