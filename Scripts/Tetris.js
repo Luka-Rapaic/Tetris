@@ -1,5 +1,4 @@
 import {IFigure, LFigure, JFigure, TFigure, OFigure, SFigure, ZFigure} from "./Blocks.js";
-import {KeyDown, KeyLeft, KeyRight, KeyRotateLeft, KeyRotateRight} from "./Keys.js";
 
 let controller;
 
@@ -185,45 +184,40 @@ class Controller {
 
         let instance = this;
 
-        let buttonRotateLeft = $("#buttonRotateLeft");
-        buttonRotateLeft.bind("touchstart", (event) => {
+        let btnRL = $("#btnRL");
+        btnRL.bind("touchstart", (event) => {
             event.preventDefault();
             instance.keyDownHandler({"keyCode": 65})
         });
-        buttonRotateLeft.bind("touchend", (event) => {instance.keyUpHandler({"keyCode": 65})});
-        new KeyRotateLeft(buttonRotateLeft.get(0).getContext("2d")).paint();
+        btnRL.bind("touchend", (event) => {instance.keyUpHandler({"keyCode": 65})});
 
-        let buttonRotateRight = $("#buttonRotateRight");
-        buttonRotateRight.bind("touchstart", (event) => {
+        let btnRR = $("#btnRR");
+        btnRR.bind("touchstart", (event) => {
             event.preventDefault();
             instance.keyDownHandler({"keyCode": 68})
         });
-        buttonRotateRight.bind("touchend", (event) => {instance.keyUpHandler({"keyCode": 68})});
-        new KeyRotateRight(buttonRotateRight.get(0).getContext("2d")).paint();
+        btnRR.bind("touchend", (event) => {instance.keyUpHandler({"keyCode": 68})});
 
-        let buttonMoveLeft = $("#buttonMoveLeft");
-        buttonMoveLeft.bind("touchstart", (event) => {
+        let btnML = $("#btnML");
+        btnML.bind("touchstart", (event) => {
             event.preventDefault();
             instance.keyDownHandler({"keyCode": 37})
         });
-        buttonMoveLeft.bind("touchend", (event) => {instance.keyUpHandler({"keyCode": 37})});
-        new KeyLeft(buttonMoveLeft.get(0).getContext("2d")).paint();
+        btnML.bind("touchend", (event) => {instance.keyUpHandler({"keyCode": 37})});
 
-        let buttonMoveDown = $("#buttonMoveDown");
-        buttonMoveDown.bind("touchstart", (event) => {
+        let btnMD = $("#btnMD");
+        btnMD.bind("touchstart", (event) => {
             event.preventDefault();
             instance.keyDownHandler({"keyCode": 40})
         });
-        buttonMoveDown.bind("touchend", (event) => {instance.keyUpHandler({"keyCode": 40})});
-        new KeyDown(buttonMoveDown.get(0).getContext("2d")).paint();
+        btnMD.bind("touchend", (event) => {instance.keyUpHandler({"keyCode": 40})});
 
-        let buttonMoveRight = $("#buttonMoveRight");
-        buttonMoveRight.bind("touchstart", (event) => {
+        let btnMR = $("#btnMR");
+        btnMR.bind("touchstart", (event) => {
             event.preventDefault();
             instance.keyDownHandler({"keyCode": 39})
         });
-        buttonMoveRight.bind("touchend", (event) => {instance.keyUpHandler({"keyCode": 39})});
-        new KeyRight(buttonMoveRight.get(0).getContext("2d")).paint();
+        btnMR.bind("touchend", (event) => {instance.keyUpHandler({"keyCode": 39})});
 
         this.tickRate = null;
         this.adjustTickrate();
