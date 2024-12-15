@@ -15,19 +15,32 @@ new KeyDown(ctxMD).paint();
 let ctxMR = document.getElementById("ctxMR").getContext("2d");
 new KeyRight(ctxMR).paint();
 
-let tetrisBoard = document.getElementById("board");
-tetrisBoard.addEventListener("touchstart", (event) => {
-    event.preventDefault();
-});
+let lastTouchTime = 0;
 
-let tetrisHud = document.getElementById("tetris-hud");
-tetrisHud.addEventListener("touchstart", (event) => {
-    event.preventDefault();
-});
+document.addEventListener('touchstart', function (event) {
+    const currentTime = new Date().getTime();
+    const timeDiff = currentTime - lastTouchTime;
 
-let gameOverScreen = document.getElementById("gameOverScreen");
-gameOverScreen.addEventListener("touchstart", (event) => {
-    if (event.touches.length>1) {
-        event.preventDefault();
+    if (timeDiff < 300 && timeDiff > 0) {
+        event.preventDefault(); // Prevent the default double-tap zoom behavior
     }
-});
+
+    lastTouchTime = currentTime;
+}, { passive: false });
+
+// let tetrisBoard = document.getElementById("board");
+// tetrisBoard.addEventListener("touchstart", (event) => {
+//     event.preventDefault();
+// });
+//
+// let tetrisHud = document.getElementById("tetris-hud");
+// tetrisHud.addEventListener("touchstart", (event) => {
+//     event.preventDefault();
+// });
+//
+// let gameOverScreen = document.getElementById("gameOverScreen");
+// gameOverScreen.addEventListener("touchstart", (event) => {
+//     if (event.touches.length>1) {
+//         event.preventDefault();
+//     }
+// });
