@@ -343,7 +343,7 @@ body {
     aspect-ratio: 1/1;
 }
 
-@media (pointer: coarse) and (hover: none) {
+@media (pointer: coarse) and (hover: none), (pointer: none) {
     /* Styles for touchscreen devices */
     .touch-controls {
         display: grid;
