@@ -1,5 +1,11 @@
 import {KeyDown, KeyLeft, KeyRight, KeyRotateLeft, KeyRotateRight} from "./Keys.js";
 
+window.ontouchstart = function(event) {
+    if (event.touches.length>1) {
+        event.preventDefault();
+    }
+}
+
 let ctxRL = document.getElementById("ctxRL").getContext("2d");
 new KeyRotateLeft(ctxRL).paint();
 
