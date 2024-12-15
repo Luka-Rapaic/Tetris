@@ -200,11 +200,23 @@ body {
     margin: 0;
 }
 
+#canvasRL, #canvasRR {
+    display: none;
+}
+
 @media (pointer: coarse) and (hover: none) {
     .flex-container {
         align-items: center;
         row-gap: 10px !important;
         column-gap: 10px !important;
         padding: 10px !important;
+    }
+
+    #canvasRL, #canvasRR {
+        display: initial;
+    }
+
+    #canvasA, #canvasD {
+        display: none;
     }
 }

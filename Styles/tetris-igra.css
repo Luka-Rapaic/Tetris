@@ -50,6 +50,8 @@ body {
     max-width: 100%;
     min-width: 180px;
     background-color: whitesmoke;
+    touch-action: none;
+    user-select: none;
 }
 
 .score {

@@ -54,6 +54,7 @@
 
 .scores-table td {
     border: 1px solid black;
+    padding: 5px;
 }
 
 .scores-table th {
